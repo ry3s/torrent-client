@@ -1,0 +1,82 @@
+name:                torrent-client
+version:             0.1.0.0
+github:              "githubuser/torrent-client"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2018 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+  dependencies:
+   - bytestring
+   - lens-family
+   - attoparsec
+   - containers
+   - cryptohash
+   - vector
+   - binary
+   - stm
+   - network
+   - bytestring-conversion
+   - http-client
+   - uuid
+   - filepath
+   - free
+   - random
+executables:
+  torrent-client-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - torrent-client
+    - attoparsec
+    - bytestring
+    
+tests:
+  torrent-client-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+      - torrent-client
+      - base
+      - attoparsec
+      - async
+      - binary
+      - bytestring
+      - bytestring-conversion
+      - containers
+      - cryptohash
+      - directory
+      - filepath
+      - hspec
+      - http-client
+      - ieee754
+      - lens-family
+      - network
+      - random
+      - random-fu
+      - pretty-hex
+      - stm
+      - unordered-containers
+      - uuid
+      - vector
+      - QuickCheck
+      - quickcheck-instances
+
+    
